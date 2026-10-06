@@ -1,0 +1,702 @@
+/* =========================
+   RESET & BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background: #f8f9fc;
+}
+
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: #111827;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.7rem;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #111827,
+        #1e3a5f
+    );
+    color: white;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+}
+
+.intro {
+    color: #38bdf8;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: clamp(
+        2.5rem,
+        7vw,
+        5rem
+    );
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    max-width: 600px;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #dbeafe;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    background: #38bdf8;
+    color: #082f49;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 18px;
+    color: #555;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-section {
+    background: #eef2f7;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, 1fr);
+    gap: 20px;
+}
+
+.skill-card {
+    background: white;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #666;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-icon {
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1e293b;
+
+    font-size: 4rem;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
+}
+
+.project-content p {
+    color: #666;
+    margin-bottom: 18px;
+}
+
+.project-link {
+    color: #0284c7;
+    font-weight: bold;
+}
+
+.project-btn {
+    border: none;
+    padding: 11px 18px;
+
+    background: #0284c7;
+    color: white;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.project-btn:hover {
+    background: #0369a1;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(0, 0, 0, 0.7);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ef4444;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator {
+    position: relative;
+
+    width: 350px;
+
+    max-width: 100%;
+
+    background: #111827;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0, 0, 0, 0.4);
+}
+
+.calculator h2 {
+    text-align: center;
+
+    color: white;
+
+    margin-bottom: 20px;
+}
+
+.calc-display {
+    width: 100%;
+
+    height: 65px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    margin-bottom: 15px;
+
+    background: #1f2937;
+
+    color: white;
+
+    text-align: right;
+
+    font-size: 28px;
+}
+
+.calc-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+.calc-buttons button {
+    height: 55px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #374151;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.calc-buttons button:hover {
+    background: #4b5563;
+}
+
+.calc-buttons .operator {
+    background: #0284c7;
+}
+
+.calc-buttons .equal {
+    grid-column: span 2;
+
+    background: #16a34a;
+}
+
+
+/* =========================
+   ATM
+========================= */
+
+.atm-box {
+    position: relative;
+
+    width: 400px;
+
+    max-width: 100%;
+
+    background: #f8fafc;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 50px
+        rgba(0, 0, 0, 0.4);
+}
+
+.atm-box h2 {
+    margin-bottom: 25px;
+
+    color: #111827;
+}
+
+#pinScreen p {
+    margin-bottom: 15px;
+}
+
+#pinInput {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+.atm-btn {
+    width: 100%;
+
+    padding: 13px;
+
+    margin: 7px 0;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #0284c7;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.atm-btn:hover {
+    background: #0369a1;
+}
+
+.atm-btn.logout {
+    background: #dc2626;
+}
+
+.balance-box {
+    background: #111827;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+}
+
+.balance-box p {
+    color: #cbd5e1;
+}
+
+.balance-box h3 {
+    font-size: 30px;
+
+    margin-top: 5px;
+}
+
+.atm-message {
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+.atm-message.success {
+    color: #15803d;
+}
+
+.atm-message.error {
+    color: #dc2626;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: #eef2f7;
+}
+
+.contact-form {
+    max-width: 700px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.07);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font: inherit;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0284c7;
+}
+
+.contact-form .btn {
+    width: 100%;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #111827;
+
+    color: white;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+
+        padding: 18px 0;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 70vh;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        justify-content: center;
+    }
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .nav-links {
+        font-size: 0.9rem;
+
+        gap: 12px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 25px 18px;
+    }
+
+    .calculator {
+        padding: 20px;
+    }
+
+    .atm-box {
+        padding: 30px 20px;
+    }
+}
